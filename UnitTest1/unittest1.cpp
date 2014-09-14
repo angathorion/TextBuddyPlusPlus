@@ -141,5 +141,25 @@ namespace UnitTest1
 			teststr = strVectorToString(result);
 			Assert::AreEqual(teststr.c_str(), teststr2.c_str());
 		}
+
+		//Search multiple items
+		TEST_METHOD(TestTextHandlerMultipleSearch)
+		{
+			TextBuddy::Instance().initializeTextHandler("test");
+			TextBuddy::Instance().getTextHandler()->addText("a dog's world");
+			TextBuddy::Instance().getTextHandler()->addText("a dog eat dog world");
+			TextBuddy::Instance().getTextHandler()->addText("kool aid");
+			TextBuddy::Instance().getTextHandler()->addText("fox jumps over the dog");
+			std::vector<std::string> result;
+			result.push_back("1. a dog's world\n");
+			result.push_back("2. a dog eat dog world\n");
+			result.push_back("4. fox jumps over the dog\n");
+
+			std::string teststr;
+			std::string teststr2;
+			teststr2 = strVectorToString(TextBuddy::Instance().getTextHandler()->searchContents("dog"));
+			teststr = strVectorToString(result);
+			Assert::AreEqual(teststr.c_str(), teststr2.c_str());
+		}
 	};
 }
