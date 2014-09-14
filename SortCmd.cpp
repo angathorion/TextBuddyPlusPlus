@@ -11,5 +11,6 @@ SortCmd::~SortCmd(){
 }
 
 std::string SortCmd::execute(){
-	return "";
+	ss << FEEDBACK_SORT(filename) << std::endl;
+	return ss.str();
 }
