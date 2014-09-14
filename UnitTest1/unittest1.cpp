@@ -107,6 +107,16 @@ namespace UnitTest1
 			Assert::AreEqual(teststr.c_str(), "1. defg\n2. jkoasca\n3. lmonwp\n");
 		}
 
+		//Search function tests
 
+		//Search empty
+		TEST_METHOD(TestTextHandlerEmptySearch)
+		{
+			TextBuddy::Instance().initializeTextHandler("test");
+			TextBuddy::Instance().getTextHandler()->searchContents("test string");
+			std::string teststr;
+			teststr = TextBuddy::Instance().getTextHandler()->displayContents();
+			Assert::AreEqual(teststr.c_str(), "test is empty\n");
+		}
 	};
 }
