@@ -59,6 +59,17 @@ void TextHandler::sortContents(){
 //Returns a string vector containing the found lines
 std::vector<std::string> TextHandler::searchContents(std::string input){
 	std::vector<std::string> empty;
+	int i = 1;
+	for (std::vector<std::string>::iterator it = stringVector.begin(); it != stringVector.end(); ++it) {
+		if ((*it).find(input) != std::string::npos) {
+			std::string line;
+			line = std::to_string(i) + ". ";
+			empty.push_back(line + *it + "\n");
+		}
+
+		i++;
+	}
+
 	return empty;
 }
 

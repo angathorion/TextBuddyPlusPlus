@@ -133,7 +133,7 @@ namespace UnitTest1
 			TextBuddy::Instance().initializeTextHandler("test");
 			TextBuddy::Instance().getTextHandler()->addText("jkoasca");
 			std::vector<std::string> result;
-			result.push_back("jkoasca");
+			result.push_back("1. jkoasca\n");
 
 			std::string teststr;
 			std::string teststr2;
