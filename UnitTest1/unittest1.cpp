@@ -93,6 +93,20 @@ namespace UnitTest1
 			Assert::AreEqual(teststr.c_str(), "sorted contents of test\n");
 		}
 
+		//Test sort cmd behavior
+		TEST_METHOD(TestSortCmdBehavior)
+		{
+			TextBuddy::Instance().initializeTextHandler("test");
+			TextBuddy::Instance().getTextHandler()->addText("jkoasca");
+			TextBuddy::Instance().getTextHandler()->addText("defg");
+			TextBuddy::Instance().getTextHandler()->addText("lmonwp");
+			SortCmd cmd("test");
+			cmd.execute();
+			std::string teststr;
+			teststr = TextBuddy::Instance().getTextHandler()->displayContents();
+			Assert::AreEqual(teststr.c_str(), "1. defg\n2. jkoasca\n3. lmonwp\n");
+		}
+
 
 	};
 }
