@@ -55,5 +55,22 @@ namespace UnitTest1
 			//Logger::WriteMessage(teststr.c_str());
 			Assert::AreEqual(teststr.c_str(), "1. defg\n");
 		}
+
+		//Test for actual sorting behavior. This is the hard(er) part.
+
+		//Items that are presented already in order
+		TEST_METHOD(TestTextHandlerSort1)
+		{
+			TextBuddy::Instance().initializeTextHandler("test");
+			TextBuddy::Instance().getTextHandler()->addText("defg");
+			TextBuddy::Instance().getTextHandler()->addText("jkoasca");
+			TextBuddy::Instance().getTextHandler()->addText("lmonwp");
+			TextBuddy::Instance().getTextHandler()->sortContents();
+			std::string teststr;
+			teststr = TextBuddy::Instance().getTextHandler()->displayContents();
+			//Logger::WriteMessage(teststr.c_str());
+			Assert::AreEqual(teststr.c_str(), "1. defg\n2. jkoasca\n3. lmonwp\n");
+		}
+
 	};
 }
