@@ -32,5 +32,28 @@ namespace UnitTest1
 			//Logger::WriteMessage(teststr.c_str());
 			Assert::AreEqual(teststr.c_str(), "test is empty\n");
 		}
+
+		//Sort single item
+		TEST_METHOD(TestTextHandlerSingleSort1)
+		{
+			TextBuddy::Instance().initializeTextHandler("test");
+			TextBuddy::Instance().getTextHandler()->addText("abcd");
+			TextBuddy::Instance().getTextHandler()->sortContents();
+			std::string teststr;
+			teststr = TextBuddy::Instance().getTextHandler()->displayContents();
+			//Logger::WriteMessage(teststr.c_str());
+			Assert::AreEqual(teststr.c_str(), "1. abcd\n");
+		}
+
+		TEST_METHOD(TestTextHandlerSingleSort2)
+		{
+			TextBuddy::Instance().initializeTextHandler("test");
+			TextBuddy::Instance().getTextHandler()->addText("defg");
+			TextBuddy::Instance().getTextHandler()->sortContents();
+			std::string teststr;
+			teststr = TextBuddy::Instance().getTextHandler()->displayContents();
+			//Logger::WriteMessage(teststr.c_str());
+			Assert::AreEqual(teststr.c_str(), "1. defg\n");
+		}
 	};
 }
