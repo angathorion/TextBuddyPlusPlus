@@ -43,10 +43,10 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <LinkIncremental>true</LinkIncremental>
-    <ExecutablePath>F:\Users\Source\Repos\CE1\TextBuddy\Debug;C:\Users\Tang\Source\Repos\CE1\TextBuddy\Debug;$(ExecutablePath)</ExecutablePath>
-    <IncludePath>F:\Users\Source\Repos\CE1\TextBuddy;C:\Users\Tang\Source\Repos\CE1\TextBuddy;$(IncludePath)</IncludePath>
-    <LibraryPath>F:\Users\Source\Repos\CE1\TextBuddy\Debug;C:\Users\Tang\Source\Repos\CE1\TextBuddy\Debug;$(LibraryPath)</LibraryPath>
-    <ReferencePath>F:\Users\Source\Repos\CE1\TextBuddy\Debug;C:\Users\Tang\Source\Repos\CE1\TextBuddy\Debug;$(ReferencePath)</ReferencePath>
+    <ExecutablePath>$(SolutionDir)\Debug;$(ExecutablePath)</ExecutablePath>
+    <IncludePath>$(SolutionDir);$(IncludePath)</IncludePath>
+    <LibraryPath>$(SolutionDir)\Debug;$(LibraryPath)</LibraryPath>
+    <ReferencePath>$(SolutionDir)\Debug;$(ReferencePath)</ReferencePath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <LinkIncremental>true</LinkIncremental>
@@ -56,14 +56,14 @@
       <PrecompiledHeader>Use</PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
-      <AdditionalIncludeDirectories>C:\Users\Tang\Source\Repos\CE1\TextBuddy;$(VCInstallDir)UnitTest\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(VCInstallDir)UnitTest\include;$(SolutionDir);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>WIN32;_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <UseFullPaths>true</UseFullPaths>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalLibraryDirectories>C:\Users\Tang\Source\Repos\CE1\TextBuddy\Debug;$(VCInstallDir)UnitTest\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>$(VCInstallDir)UnitTest\lib;$(SolutionDir)\Debug;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalDependencies>TextHandler.obj;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
