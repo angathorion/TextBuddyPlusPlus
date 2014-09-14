@@ -53,9 +53,8 @@ void TextHandler::clearContents(){
 }
 
 void TextHandler::sortContents(){
-
+	std::sort(stringVector.begin(), stringVector.end());
 }
-
 
 //Writes contents of stringVector to file
 void TextHandler::saveFile(){
