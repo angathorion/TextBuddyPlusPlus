@@ -52,6 +52,10 @@ void TextHandler::clearContents(){
 	stringVector.clear();
 }
 
+void TextHandler::sortContents(){
+
+}
+
 
 //Writes contents of stringVector to file
 void TextHandler::saveFile(){

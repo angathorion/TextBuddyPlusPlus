@@ -27,6 +27,7 @@ public:
 	void clearContents();
 	std::vector<std::string> getStringVector();
 	std::string getString(int index);
+	void sortContents();
 };
 
 #endif

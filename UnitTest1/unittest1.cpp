@@ -10,17 +10,27 @@ namespace UnitTest1
 	{
 	public:
 		
-		TEST_METHOD(TestMethod1)
+		TEST_METHOD(TestTextHandlerDisplay)
 		{
 			TextBuddy::Instance().initializeTextHandler("test");
 			TextBuddy::Instance().getTextHandler()->addText("abcd");
 			std::string teststr; 
 			teststr = TextBuddy::Instance().getTextHandler()->displayContents();
-			Logger::WriteMessage(teststr.c_str());
+			//Logger::WriteMessage(teststr.c_str());
 			Assert::AreEqual(teststr.c_str(), "1. abcd\n");
 		}
 
-		//Tests for
+		//Tests for new sort method
 
+		//Sort empty
+		TEST_METHOD(TestTextHandlerEmptySort)
+		{
+			TextBuddy::Instance().initializeTextHandler("test");
+			TextBuddy::Instance().getTextHandler()->sortContents();
+			std::string teststr;
+			teststr = TextBuddy::Instance().getTextHandler()->displayContents();
+			//Logger::WriteMessage(teststr.c_str());
+			Assert::AreEqual(teststr.c_str(), "test is empty\n");
+		}
 	};
 }
