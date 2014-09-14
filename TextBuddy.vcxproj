@@ -72,6 +72,7 @@
     <ClCompile Include="DisplayCmd.cpp" />
     <ClCompile Include="ExitCmd.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="SortCmd.cpp" />
     <ClCompile Include="TextBuddy.cpp" />
     <ClCompile Include="TextHandler.cpp" />
   </ItemGroup>
@@ -84,6 +85,7 @@
     <ClInclude Include="DeleteCmd.h" />
     <ClInclude Include="DisplayCmd.h" />
     <ClInclude Include="ExitCmd.h" />
+    <ClInclude Include="SortCmd.h" />
     <ClInclude Include="TextBuddy.h" />
     <ClInclude Include="TextHandler.h" />
   </ItemGroup>

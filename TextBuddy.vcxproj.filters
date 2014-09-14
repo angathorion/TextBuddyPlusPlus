@@ -45,6 +45,9 @@
     <ClCompile Include="BaseCmd.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="SortCmd.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="TextBuddy.h">
@@ -75,6 +78,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="BaseCmd.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="SortCmd.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

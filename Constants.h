@@ -19,4 +19,6 @@
 	"command: "
 #define FEEDBACK_FILE_EMPTY(filename) \
 	filename + " is empty"
+#define FEEDBACK_SORT(filename) \
+	"sorted contents of " + filename
 #endif
