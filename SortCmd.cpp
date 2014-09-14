@@ -11,6 +11,8 @@ SortCmd::~SortCmd(){
 }
 
 std::string SortCmd::execute(){
+	TextHandler *handler = TextBuddy::Instance().getTextHandler();
+	handler->sortContents();
 	ss << FEEDBACK_SORT(filename) << std::endl;
 	return ss.str();
 }

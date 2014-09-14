@@ -9,7 +9,7 @@
 #include "DisplayCmd.h"
 #include "DeleteCmd.h"
 #include "TextBuddy.h"
-
+#include "SortCmd.h"
 CommandPicker::CommandPicker(std::string input, std::string file){
 	getCommandFromInput(input);
 	getParametersFromInput(input);
@@ -49,6 +49,10 @@ std::string CommandPicker::executeCommand(){
 	}
 	else if (command.compare("exit") == 0) {
 		ExitCmd cmd;
+		return cmd.execute();
+	}
+	else if (command.compare("sort") == 0) {
+		SortCmd cmd(filename);
 		return cmd.execute();
 	}
 	else {
