@@ -56,6 +56,13 @@ void TextHandler::sortContents(){
 	std::sort(stringVector.begin(), stringVector.end());
 }
 
+//Returns a string vector containing the found lines
+std::vector<std::string> TextHandler::searchContents(std::string input){
+	std::vector<std::string> empty;
+	return empty;
+}
+
+
 //Writes contents of stringVector to file
 void TextHandler::saveFile(){
 	std::ofstream outfile(filename);

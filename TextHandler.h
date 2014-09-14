@@ -28,6 +28,7 @@ public:
 	std::vector<std::string> getStringVector();
 	std::string getString(int index);
 	void sortContents();
+	std::vector<std::string> searchContents(std::string input);
 };
 
 #endif

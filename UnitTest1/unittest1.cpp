@@ -4,7 +4,14 @@
 #include <vector>
 #include <string>
 #include "SortCmd.h"
+#include <numeric>
 using namespace Microsoft::VisualStudio::CppUnitTestFramework;
+
+std::string strVectorToString(std::vector<std::string> input){
+	std::string str = std::accumulate(input.begin(), input.end(), std::string("\n"));
+	return str;
+}
+
 namespace UnitTest1
 {		
 	TEST_CLASS(UnitTest1)
@@ -113,10 +120,11 @@ namespace UnitTest1
 		TEST_METHOD(TestTextHandlerEmptySearch)
 		{
 			TextBuddy::Instance().initializeTextHandler("test");
-			TextBuddy::Instance().getTextHandler()->searchContents("test string");
 			std::string teststr;
-			teststr = TextBuddy::Instance().getTextHandler()->displayContents();
-			Assert::AreEqual(teststr.c_str(), "test is empty\n");
+			std::string teststr2;
+			teststr2 = strVectorToString(TextBuddy::Instance().getTextHandler()->searchContents("test string"));
+			teststr = strVectorToString(TextBuddy::Instance().getTextHandler()->getStringVector());
+			Assert::AreEqual(teststr.c_str(), teststr2.c_str());
 		}
 	};
 }
