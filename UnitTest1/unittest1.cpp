@@ -3,6 +3,7 @@
 #include "TextBuddy.h"
 #include <vector>
 #include <string>
+#include "SortCmd.h"
 using namespace Microsoft::VisualStudio::CppUnitTestFramework;
 namespace UnitTest1
 {		
@@ -16,7 +17,6 @@ namespace UnitTest1
 			TextBuddy::Instance().getTextHandler()->addText("abcd");
 			std::string teststr; 
 			teststr = TextBuddy::Instance().getTextHandler()->displayContents();
-			//Logger::WriteMessage(teststr.c_str());
 			Assert::AreEqual(teststr.c_str(), "1. abcd\n");
 		}
 
@@ -29,7 +29,6 @@ namespace UnitTest1
 			TextBuddy::Instance().getTextHandler()->sortContents();
 			std::string teststr;
 			teststr = TextBuddy::Instance().getTextHandler()->displayContents();
-			//Logger::WriteMessage(teststr.c_str());
 			Assert::AreEqual(teststr.c_str(), "test is empty\n");
 		}
 
@@ -41,7 +40,6 @@ namespace UnitTest1
 			TextBuddy::Instance().getTextHandler()->sortContents();
 			std::string teststr;
 			teststr = TextBuddy::Instance().getTextHandler()->displayContents();
-			//Logger::WriteMessage(teststr.c_str());
 			Assert::AreEqual(teststr.c_str(), "1. abcd\n");
 		}
 
@@ -52,7 +50,6 @@ namespace UnitTest1
 			TextBuddy::Instance().getTextHandler()->sortContents();
 			std::string teststr;
 			teststr = TextBuddy::Instance().getTextHandler()->displayContents();
-			//Logger::WriteMessage(teststr.c_str());
 			Assert::AreEqual(teststr.c_str(), "1. defg\n");
 		}
 
@@ -68,7 +65,6 @@ namespace UnitTest1
 			TextBuddy::Instance().getTextHandler()->sortContents();
 			std::string teststr;
 			teststr = TextBuddy::Instance().getTextHandler()->displayContents();
-			//Logger::WriteMessage(teststr.c_str());
 			Assert::AreEqual(teststr.c_str(), "1. defg\n2. jkoasca\n3. lmonwp\n");
 		}
 
@@ -82,9 +78,21 @@ namespace UnitTest1
 			TextBuddy::Instance().getTextHandler()->sortContents();
 			std::string teststr;
 			teststr = TextBuddy::Instance().getTextHandler()->displayContents();
-			//Logger::WriteMessage(teststr.c_str());
 			Assert::AreEqual(teststr.c_str(), "1. defg\n2. jkoasca\n3. lmonwp\n");
 		}
+
+
+		//SortCmd class initialization
+		//Test sort output message
+		TEST_METHOD(TestSortCmdOutput)
+		{
+			TextBuddy::Instance().initializeTextHandler("test");
+			SortCmd cmd("test");
+			std::string teststr;
+			teststr = cmd.execute();
+			Assert::AreEqual(teststr.c_str(), "sorted contents of test\n");
+		}
+
 
 	};
 }

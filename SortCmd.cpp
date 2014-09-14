@@ -11,4 +11,5 @@ SortCmd::~SortCmd(){
 }
 
 std::string SortCmd::execute(){
+	return "";
 }
