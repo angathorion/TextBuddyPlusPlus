@@ -72,5 +72,19 @@ namespace UnitTest1
 			Assert::AreEqual(teststr.c_str(), "1. defg\n2. jkoasca\n3. lmonwp\n");
 		}
 
+		//Items that are presented out of order
+		TEST_METHOD(TestTextHandlerSort2)
+		{
+			TextBuddy::Instance().initializeTextHandler("test");
+			TextBuddy::Instance().getTextHandler()->addText("jkoasca");
+			TextBuddy::Instance().getTextHandler()->addText("defg");
+			TextBuddy::Instance().getTextHandler()->addText("lmonwp");
+			TextBuddy::Instance().getTextHandler()->sortContents();
+			std::string teststr;
+			teststr = TextBuddy::Instance().getTextHandler()->displayContents();
+			//Logger::WriteMessage(teststr.c_str());
+			Assert::AreEqual(teststr.c_str(), "1. defg\n2. jkoasca\n3. lmonwp\n");
+		}
+
 	};
 }
