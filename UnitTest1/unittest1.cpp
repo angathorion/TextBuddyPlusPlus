@@ -126,5 +126,20 @@ namespace UnitTest1
 			teststr = strVectorToString(TextBuddy::Instance().getTextHandler()->getStringVector());
 			Assert::AreEqual(teststr.c_str(), teststr2.c_str());
 		}
+
+		//Search 1 item
+		TEST_METHOD(TestTextHandlerSingleSearch)
+		{
+			TextBuddy::Instance().initializeTextHandler("test");
+			TextBuddy::Instance().getTextHandler()->addText("jkoasca");
+			std::vector<std::string> result;
+			result.push_back("jkoasca");
+
+			std::string teststr;
+			std::string teststr2;
+			teststr2 = strVectorToString(TextBuddy::Instance().getTextHandler()->searchContents("jkoasca"));
+			teststr = strVectorToString(result);
+			Assert::AreEqual(teststr.c_str(), teststr2.c_str());
+		}
 	};
 }
