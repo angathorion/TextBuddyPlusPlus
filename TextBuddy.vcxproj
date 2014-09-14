@@ -16,7 +16,7 @@
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
-    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
     <PlatformToolset>v120</PlatformToolset>
     <CharacterSet>MultiByte</CharacterSet>
@@ -72,6 +72,7 @@
     <ClCompile Include="DisplayCmd.cpp" />
     <ClCompile Include="ExitCmd.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="SearchCmd.cpp" />
     <ClCompile Include="SortCmd.cpp" />
     <ClCompile Include="TextBuddy.cpp" />
     <ClCompile Include="TextHandler.cpp" />
@@ -85,6 +86,7 @@
     <ClInclude Include="DeleteCmd.h" />
     <ClInclude Include="DisplayCmd.h" />
     <ClInclude Include="ExitCmd.h" />
+    <ClInclude Include="SearchCmd.h" />
     <ClInclude Include="SortCmd.h" />
     <ClInclude Include="TextBuddy.h" />
     <ClInclude Include="TextHandler.h" />

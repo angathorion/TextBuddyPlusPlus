@@ -21,4 +21,6 @@
 	filename + " is empty"
 #define FEEDBACK_SORT(filename) \
 	"sorted contents of " + filename
+#define FEEDBACK_SEARCH \
+	"Results:"
 #endif
